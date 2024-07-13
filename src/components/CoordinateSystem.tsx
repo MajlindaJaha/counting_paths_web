@@ -35,7 +35,7 @@ const CoordinateGraph: React.FC<{ route: string }> = ({ route }) => {
     const innerWidth = width - margin.left - margin.right;
     const innerHeight = height - margin.top - margin.bottom;
     const step = innerWidth / 10;
-
+    console.log(step);
     const g = svg
       .attr("width", width)
       .attr("height", height)
@@ -55,14 +55,14 @@ const CoordinateGraph: React.FC<{ route: string }> = ({ route }) => {
           .ticks(10)
           .tickFormat((d, i) => `${i}`)
       );
-
+    console.log(xAxisGroup);
     const yAxisGroup = g.append("g").call(
       d3
         .axisLeft(yAxis)
         .ticks(10)
         .tickFormat((d, i) => `${i}`)
     );
-
+    console.log(yAxisGroup);
     let x = 0;
     let y = 0;
 
