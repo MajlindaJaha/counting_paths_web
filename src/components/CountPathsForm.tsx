@@ -54,16 +54,16 @@ const CountPathsForm = () => {
         {({ errors, touched, handleSubmit }) => (
           <Form
             onSubmit={handleSubmit}
-            className="relative ml-7 flex justify-center items-center m-20"
+            className="relative ml-7 flex justify-center items-center m-10 lg:m-20"
           >
-            <div className="w-[55%]">
+            <div className=" w-full lg:w-[55%]">
               <div className="flex justify-center mb-5">
                 <h1 className=" ml-3 uppercase text-3xl text-bold text-green-500 font-bold italic">
                   Count Paths
                 </h1>
               </div>
               <div className="grid grid-rows-1 ml-8">
-                <div className="grid grid-cols-2 gap-y-0 gap-x-2 w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-0 gap-x-2 w-full">
                   <div className="flex flex-col">
                     <label className="mb-1">Steps East (X)</label>
                     <Field
@@ -122,7 +122,7 @@ const CountPathsForm = () => {
             <h2 className="text-lg font-bold">Results</h2>
             <p>Number of valid paths: {count}</p>
           </div>
-          <CoordinateSystem routes={routes} />
+          {routes.length <= 11971 && <CoordinateSystem routes={routes} />}
         </div>
       )}
     </div>

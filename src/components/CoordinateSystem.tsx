@@ -8,7 +8,7 @@ interface CoordinateSystemProps {
 const CoordinateSystem: React.FC<CoordinateSystemProps> = ({ routes }) => {
   return (
     <div className="grid place-items-center m-10 gap-3">
-      <div className="coordinate-system grid grid-cols-4">
+      <div className="coordinate-system grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
         {routes.map((route, index) => (
           <div key={index} className="coordinate-system__graph">
             <h3>Path {index + 1}</h3>
