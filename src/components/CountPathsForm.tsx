@@ -18,7 +18,7 @@ const CountPathsForm = () => {
     }, 5000);
   };
 
-  const countPaths = async (values: { x: number; y: number }) => {
+  const countPaths = async (values: { x: number | null; y: number | null }) => {
     setLoading(true);
     try {
       const response = await api.post("/count-paths", values);
@@ -38,7 +38,7 @@ const CountPathsForm = () => {
   return (
     <div className="flex flex-col">
       <Formik
-        initialValues={{ x: 0, y: 0 }}
+        initialValues={{ x: null, y: null }}
         onSubmit={(values) => {
           countPaths(values);
         }}
